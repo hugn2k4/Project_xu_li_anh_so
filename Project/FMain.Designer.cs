@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.pnlNav = new System.Windows.Forms.Panel();
+            this.btnChonAnh = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.ptbAnh = new System.Windows.Forms.PictureBox();
+            this.ptbAnhXam = new System.Windows.Forms.PictureBox();
             this.btnBai3 = new System.Windows.Forms.Button();
             this.btnBai2 = new System.Windows.Forms.Button();
             this.btnBai1 = new System.Windows.Forms.Button();
-            this.btnChonAnh = new System.Windows.Forms.Button();
             this.pnlBaiTap = new System.Windows.Forms.Panel();
-            this.ptbAnhXam = new System.Windows.Forms.PictureBox();
-            this.ptbAnh = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.pnlNav.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbAnhXam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAnh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbAnhXam)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlNav
@@ -58,6 +58,54 @@
             this.pnlNav.Name = "pnlNav";
             this.pnlNav.Size = new System.Drawing.Size(307, 600);
             this.pnlNav.TabIndex = 0;
+            // 
+            // btnChonAnh
+            // 
+            this.btnChonAnh.Location = new System.Drawing.Point(83, 21);
+            this.btnChonAnh.Name = "btnChonAnh";
+            this.btnChonAnh.Size = new System.Drawing.Size(134, 34);
+            this.btnChonAnh.TabIndex = 1;
+            this.btnChonAnh.Text = "Chọn ảnh";
+            this.btnChonAnh.UseVisualStyleBackColor = true;
+            this.btnChonAnh.Click += new System.EventHandler(this.btnChonAnh_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(29, 66);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 13);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Ảnh màu:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(29, 303);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 13);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Ảnh xám:";
+            // 
+            // ptbAnh
+            // 
+            this.ptbAnh.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ptbAnh.Location = new System.Drawing.Point(32, 82);
+            this.ptbAnh.Name = "ptbAnh";
+            this.ptbAnh.Size = new System.Drawing.Size(244, 205);
+            this.ptbAnh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptbAnh.TabIndex = 6;
+            this.ptbAnh.TabStop = false;
+            // 
+            // ptbAnhXam
+            // 
+            this.ptbAnhXam.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ptbAnhXam.Location = new System.Drawing.Point(32, 319);
+            this.ptbAnhXam.Name = "ptbAnhXam";
+            this.ptbAnhXam.Size = new System.Drawing.Size(244, 205);
+            this.ptbAnhXam.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptbAnhXam.TabIndex = 5;
+            this.ptbAnhXam.TabStop = false;
             // 
             // btnBai3
             // 
@@ -89,61 +137,14 @@
             this.btnBai1.UseVisualStyleBackColor = true;
             this.btnBai1.Click += new System.EventHandler(this.btnBai1_Click);
             // 
-            // btnChonAnh
-            // 
-            this.btnChonAnh.Location = new System.Drawing.Point(83, 21);
-            this.btnChonAnh.Name = "btnChonAnh";
-            this.btnChonAnh.Size = new System.Drawing.Size(134, 34);
-            this.btnChonAnh.TabIndex = 1;
-            this.btnChonAnh.Text = "Chọn ảnh";
-            this.btnChonAnh.UseVisualStyleBackColor = true;
-            this.btnChonAnh.Click += new System.EventHandler(this.btnChonAnh_Click);
-            // 
             // pnlBaiTap
             // 
+            this.pnlBaiTap.AutoScroll = true;
             this.pnlBaiTap.BackColor = System.Drawing.SystemColors.ControlLight;
             this.pnlBaiTap.Location = new System.Drawing.Point(315, 2);
             this.pnlBaiTap.Name = "pnlBaiTap";
             this.pnlBaiTap.Size = new System.Drawing.Size(1000, 600);
             this.pnlBaiTap.TabIndex = 1;
-            // 
-            // ptbAnhXam
-            // 
-            this.ptbAnhXam.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ptbAnhXam.Location = new System.Drawing.Point(32, 319);
-            this.ptbAnhXam.Name = "ptbAnhXam";
-            this.ptbAnhXam.Size = new System.Drawing.Size(244, 205);
-            this.ptbAnhXam.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ptbAnhXam.TabIndex = 5;
-            this.ptbAnhXam.TabStop = false;
-            // 
-            // ptbAnh
-            // 
-            this.ptbAnh.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ptbAnh.Location = new System.Drawing.Point(32, 82);
-            this.ptbAnh.Name = "ptbAnh";
-            this.ptbAnh.Size = new System.Drawing.Size(244, 205);
-            this.ptbAnh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ptbAnh.TabIndex = 6;
-            this.ptbAnh.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 303);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 13);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Ảnh xám:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 66);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 13);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Ảnh màu:";
             // 
             // Project
             // 
@@ -157,8 +158,8 @@
             this.Text = "Project";
             this.pnlNav.ResumeLayout(false);
             this.pnlNav.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbAnhXam)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAnh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbAnhXam)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -173,8 +174,8 @@
         private System.Windows.Forms.Panel pnlBaiTap;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox ptbAnh;
-        private System.Windows.Forms.PictureBox ptbAnhXam;
+        public System.Windows.Forms.PictureBox ptbAnh;
+        public System.Windows.Forms.PictureBox ptbAnhXam;
     }
 }
 

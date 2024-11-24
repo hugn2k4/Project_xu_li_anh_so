@@ -15,7 +15,7 @@ namespace Project
         public Project()
         {
             InitializeComponent();
-            showFormInPanel(new FBai1());
+            showFormInPanel(new FBai1(ptbAnhXam));
         }
         private void showFormInPanel(Form form)
         {
@@ -27,7 +27,7 @@ namespace Project
         }
         private void btnBai1_Click(object sender, EventArgs e)
         {
-            showFormInPanel(new FBai1());
+            showFormInPanel(new FBai1(ptbAnhXam));
         }
 
         private void btnBai2_Click(object sender, EventArgs e)
