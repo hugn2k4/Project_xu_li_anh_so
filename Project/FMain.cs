@@ -32,7 +32,7 @@ namespace Project
 
         private void btnBai2_Click(object sender, EventArgs e)
         {
-            showFormInPanel(new FBai2());
+            showFormInPanel(new FBai2(ptbAnhXam));
         }
 
         private void btnBai3_Click(object sender, EventArgs e)
@@ -51,7 +51,8 @@ namespace Project
                 {
                     try
                     {
-                        ptbAnh.Image = Image.FromFile(openFileDialog.FileName);
+                        Image image = Image.FromFile(openFileDialog.FileName);
+                        ptbAnh.Image = image;
                         BtnConvertToGray_Click(sender, e);
                     }
                     catch (Exception ex)

@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "D:\\Xu_Ly_Anh_So\\Project_xu_li_anh_so\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{729E9160-9D46-44D8-90D2-2524BC67F669}|Project\\Project.csproj|d:\\xu_ly_anh_so\\project_xu_li_anh_so\\project\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{729E9160-9D46-44D8-90D2-2524BC67F669}|Project\\Project.csproj|solutionrelative:project\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{729E9160-9D46-44D8-90D2-2524BC67F669}|Project\\Project.csproj|d:\\xu_ly_anh_so\\project_xu_li_anh_so\\project\\fbai3_2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{729E9160-9D46-44D8-90D2-2524BC67F669}|Project\\Project.csproj|solutionrelative:project\\fbai3_2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -21,6 +17,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{729E9160-9D46-44D8-90D2-2524BC67F669}|Project\\Project.csproj|d:\\xu_ly_anh_so\\project_xu_li_anh_so\\project\\fmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{729E9160-9D46-44D8-90D2-2524BC67F669}|Project\\Project.csproj|solutionrelative:project\\fmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{729E9160-9D46-44D8-90D2-2524BC67F669}|Project\\Project.csproj|d:\\xu_ly_anh_so\\project_xu_li_anh_so\\project\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{729E9160-9D46-44D8-90D2-2524BC67F669}|Project\\Project.csproj|solutionrelative:project\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{729E9160-9D46-44D8-90D2-2524BC67F669}|Project\\Project.csproj|d:\\xu_ly_anh_so\\project_xu_li_anh_so\\project\\fmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -38,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,12 +46,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "FBai3_2.cs",
               "DocumentMoniker": "D:\\Xu_Ly_Anh_So\\Project_xu_li_anh_so\\Project\\FBai3_2.cs",
               "RelativeDocumentMoniker": "Project\\FBai3_2.cs",
-              "ToolTip": "D:\\Xu_Ly_Anh_So\\Project_xu_li_anh_so\\Project\\FBai3_2.cs",
-              "RelativeToolTip": "Project\\FBai3_2.cs",
+              "ToolTip": "D:\\Xu_Ly_Anh_So\\Project_xu_li_anh_so\\Project\\FBai3_2.cs*",
+              "RelativeToolTip": "Project\\FBai3_2.cs*",
               "ViewState": "AgIAAKoAAAAAAAAAAAA1wLsAAABcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-24T17:23:44.037Z",
@@ -59,12 +59,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "FBai3_2.cs [Design]",
               "DocumentMoniker": "D:\\Xu_Ly_Anh_So\\Project_xu_li_anh_so\\Project\\FBai3_2.cs",
               "RelativeDocumentMoniker": "Project\\FBai3_2.cs",
-              "ToolTip": "D:\\Xu_Ly_Anh_So\\Project_xu_li_anh_so\\Project\\FBai3_2.cs [Design]",
-              "RelativeToolTip": "Project\\FBai3_2.cs [Design]",
+              "ToolTip": "D:\\Xu_Ly_Anh_So\\Project_xu_li_anh_so\\Project\\FBai3_2.cs [Design]*",
+              "RelativeToolTip": "Project\\FBai3_2.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-24T17:15:00.658Z",
               "EditorCaption": " [Design]"
@@ -84,7 +84,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "FMain.cs [Design]",
               "DocumentMoniker": "D:\\Xu_Ly_Anh_So\\Project_xu_li_anh_so\\Project\\FMain.cs",
               "RelativeDocumentMoniker": "Project\\FMain.cs",
@@ -96,7 +96,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "FBai2.cs",
               "DocumentMoniker": "D:\\Xu_Ly_Anh_So\\Project_xu_li_anh_so\\Project\\FBai2.cs",
               "RelativeDocumentMoniker": "Project\\FBai2.cs",
@@ -121,7 +121,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Xu_Ly_Anh_So\\Project_xu_li_anh_so\\Project\\Program.cs",
               "RelativeDocumentMoniker": "Project\\Program.cs",

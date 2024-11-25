@@ -30,3 +30,35 @@ C:\Users\ADMIN\Desktop\Hoc_ki_5\Xử lí ảnh số\Project\Project\obj\Debug\Pr
 C:\Users\ADMIN\Desktop\Hoc_ki_5\Xử lí ảnh số\Project\Project\obj\Debug\Project.FBai3_1.resources
 C:\Users\ADMIN\Desktop\Hoc_ki_5\Xử lí ảnh số\Project\Project\obj\Debug\Project.FBai3_2.resources
 C:\Users\ADMIN\Desktop\Hoc_ki_5\Xử lí ảnh số\Project\Project\obj\Debug\Project.FBai3_3.resources
+D:\Xu_Ly_Anh_So\Project_xu_li_anh_so\Project\bin\Debug\Project.exe.config
+D:\Xu_Ly_Anh_So\Project_xu_li_anh_so\Project\bin\Debug\Project.exe
+D:\Xu_Ly_Anh_So\Project_xu_li_anh_so\Project\bin\Debug\Project.pdb
+D:\Xu_Ly_Anh_So\Project_xu_li_anh_so\Project\bin\Debug\ZedGraph.dll
+D:\Xu_Ly_Anh_So\Project_xu_li_anh_so\Project\bin\Debug\ZedGraph.xml
+D:\Xu_Ly_Anh_So\Project_xu_li_anh_so\Project\bin\Debug\de\ZedGraph.resources.dll
+D:\Xu_Ly_Anh_So\Project_xu_li_anh_so\Project\bin\Debug\es\ZedGraph.resources.dll
+D:\Xu_Ly_Anh_So\Project_xu_li_anh_so\Project\bin\Debug\fr\ZedGraph.resources.dll
+D:\Xu_Ly_Anh_So\Project_xu_li_anh_so\Project\bin\Debug\hu\ZedGraph.resources.dll
+D:\Xu_Ly_Anh_So\Project_xu_li_anh_so\Project\bin\Debug\it\ZedGraph.resources.dll
+D:\Xu_Ly_Anh_So\Project_xu_li_anh_so\Project\bin\Debug\ja\ZedGraph.resources.dll
+D:\Xu_Ly_Anh_So\Project_xu_li_anh_so\Project\bin\Debug\pt\ZedGraph.resources.dll
+D:\Xu_Ly_Anh_So\Project_xu_li_anh_so\Project\bin\Debug\ru\ZedGraph.resources.dll
+D:\Xu_Ly_Anh_So\Project_xu_li_anh_so\Project\bin\Debug\sk\ZedGraph.resources.dll
+D:\Xu_Ly_Anh_So\Project_xu_li_anh_so\Project\bin\Debug\sv\ZedGraph.resources.dll
+D:\Xu_Ly_Anh_So\Project_xu_li_anh_so\Project\bin\Debug\tr\ZedGraph.resources.dll
+D:\Xu_Ly_Anh_So\Project_xu_li_anh_so\Project\bin\Debug\zh-cn\ZedGraph.resources.dll
+D:\Xu_Ly_Anh_So\Project_xu_li_anh_so\Project\bin\Debug\zh-tw\ZedGraph.resources.dll
+D:\Xu_Ly_Anh_So\Project_xu_li_anh_so\Project\obj\Debug\Project.csproj.AssemblyReference.cache
+D:\Xu_Ly_Anh_So\Project_xu_li_anh_so\Project\obj\Debug\Project.FBai1.resources
+D:\Xu_Ly_Anh_So\Project_xu_li_anh_so\Project\obj\Debug\Project.FBai2.resources
+D:\Xu_Ly_Anh_So\Project_xu_li_anh_so\Project\obj\Debug\Project.FBai3.resources
+D:\Xu_Ly_Anh_So\Project_xu_li_anh_so\Project\obj\Debug\Project.FBai3_1.resources
+D:\Xu_Ly_Anh_So\Project_xu_li_anh_so\Project\obj\Debug\Project.FBai3_2.resources
+D:\Xu_Ly_Anh_So\Project_xu_li_anh_so\Project\obj\Debug\Project.FBai3_3.resources
+D:\Xu_Ly_Anh_So\Project_xu_li_anh_so\Project\obj\Debug\Project.Project.resources
+D:\Xu_Ly_Anh_So\Project_xu_li_anh_so\Project\obj\Debug\Project.Properties.Resources.resources
+D:\Xu_Ly_Anh_So\Project_xu_li_anh_so\Project\obj\Debug\Project.csproj.GenerateResource.cache
+D:\Xu_Ly_Anh_So\Project_xu_li_anh_so\Project\obj\Debug\Project.csproj.CoreCompileInputs.cache
+D:\Xu_Ly_Anh_So\Project_xu_li_anh_so\Project\obj\Debug\Project.csproj.Up2Date
+D:\Xu_Ly_Anh_So\Project_xu_li_anh_so\Project\obj\Debug\Project.exe
+D:\Xu_Ly_Anh_So\Project_xu_li_anh_so\Project\obj\Debug\Project.pdb
