@@ -201,6 +201,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FBai3_1";
             this.Text = "FBai3_1";
+            this.Load += new System.EventHandler(this.FBai3_1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ptbPadding0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPadding1)).EndInit();
             this.ResumeLayout(false);
