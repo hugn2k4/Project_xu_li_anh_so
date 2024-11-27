@@ -32,12 +32,12 @@ namespace Project
 
         private void btnBai2_Click(object sender, EventArgs e)
         {
-            showFormInPanel(new FBai2());
+            showFormInPanel(new FBai2(ptbAnhXam));
         }
 
         private void btnBai3_Click(object sender, EventArgs e)
         {
-            showFormInPanel(new FBai3());
+            showFormInPanel(new FBai3(ptbAnhXam));
         }
 
         private void btnChonAnh_Click(object sender, EventArgs e)
