@@ -12,12 +12,17 @@ namespace Project
 {
     public partial class FBai3 : Form
     {
-        //FBai3_1 fBai3_1 = new FBai3_1();
-        FBai3_2 fBai3_2 = new FBai3_2();
-        FBai3_3 fBai3_3 = new FBai3_3();
-        public FBai3()
+        private PictureBox ptbAnhXam;
+        FBai3_1 fBai3_1;
+        FBai3_2 fBai3_2;
+        FBai3_3 fBai3_3;
+        public FBai3(PictureBox ptbAnhXam)
         {
             InitializeComponent();
+            this.ptbAnhXam = ptbAnhXam;
+            fBai3_1 = new FBai3_1(ptbAnhXam);
+            fBai3_2 = new FBai3_2();
+            fBai3_3 = new FBai3_3(ptbAnhXam);
             showFormInPanel(fBai3_1);
         }
         private void showFormInPanel(Form form)
@@ -41,7 +46,7 @@ namespace Project
             }
             else if (selectedItem.Contains("3"))
             {
-                showFormInPanel(fBai3_2);
+                showFormInPanel(fBai3_3);
             }
         }
     }
