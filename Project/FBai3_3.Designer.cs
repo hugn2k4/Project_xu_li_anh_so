@@ -35,7 +35,6 @@
             this.graphPadding1TongHop = new ZedGraph.ZedGraphControl();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.graphPadding1KetHopCanBang = new ZedGraph.ZedGraphControl();
             this.graphPadding1KetHop = new ZedGraph.ZedGraphControl();
             this.label4 = new System.Windows.Forms.Label();
@@ -53,6 +52,7 @@
             this.ptbPadding13 = new System.Windows.Forms.PictureBox();
             this.ptbPadding12 = new System.Windows.Forms.PictureBox();
             this.ptbPadding11 = new System.Windows.Forms.PictureBox();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPadding01)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPadding02)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPadding03)).BeginInit();
@@ -82,6 +82,7 @@
             // graphPadding1TongHopCanBang
             // 
             this.graphPadding1TongHopCanBang.Location = new System.Drawing.Point(621, 848);
+            this.graphPadding1TongHopCanBang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.graphPadding1TongHopCanBang.Name = "graphPadding1TongHopCanBang";
             this.graphPadding1TongHopCanBang.ScrollGrace = 0D;
             this.graphPadding1TongHopCanBang.ScrollMaxX = 0D;
@@ -97,6 +98,7 @@
             // graphPadding1TongHop
             // 
             this.graphPadding1TongHop.Location = new System.Drawing.Point(294, 848);
+            this.graphPadding1TongHop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.graphPadding1TongHop.Name = "graphPadding1TongHop";
             this.graphPadding1TongHop.ScrollGrace = 0D;
             this.graphPadding1TongHop.ScrollMaxX = 0D;
@@ -127,18 +129,10 @@
             this.label9.TabIndex = 67;
             this.label9.Text = "Histogram dạng kết hợp";
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(12, 551);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(64, 13);
-            this.label10.TabIndex = 66;
-            this.label10.Text = "Padding = 1";
-            // 
             // graphPadding1KetHopCanBang
             // 
             this.graphPadding1KetHopCanBang.Location = new System.Drawing.Point(621, 578);
+            this.graphPadding1KetHopCanBang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.graphPadding1KetHopCanBang.Name = "graphPadding1KetHopCanBang";
             this.graphPadding1KetHopCanBang.ScrollGrace = 0D;
             this.graphPadding1KetHopCanBang.ScrollMaxX = 0D;
@@ -154,6 +148,7 @@
             // graphPadding1KetHop
             // 
             this.graphPadding1KetHop.Location = new System.Drawing.Point(294, 578);
+            this.graphPadding1KetHop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.graphPadding1KetHop.Name = "graphPadding1KetHop";
             this.graphPadding1KetHop.ScrollGrace = 0D;
             this.graphPadding1KetHop.ScrollMaxX = 0D;
@@ -187,6 +182,7 @@
             // graphPadding0TongHopCanBang
             // 
             this.graphPadding0TongHopCanBang.Location = new System.Drawing.Point(621, 305);
+            this.graphPadding0TongHopCanBang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.graphPadding0TongHopCanBang.Name = "graphPadding0TongHopCanBang";
             this.graphPadding0TongHopCanBang.ScrollGrace = 0D;
             this.graphPadding0TongHopCanBang.ScrollMaxX = 0D;
@@ -202,6 +198,7 @@
             // graphPadding0TongHop
             // 
             this.graphPadding0TongHop.Location = new System.Drawing.Point(294, 305);
+            this.graphPadding0TongHop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.graphPadding0TongHop.Name = "graphPadding0TongHop";
             this.graphPadding0TongHop.ScrollGrace = 0D;
             this.graphPadding0TongHop.ScrollMaxX = 0D;
@@ -235,7 +232,8 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 9);
+            this.label1.Location = new System.Drawing.Point(2, 7);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 13);
             this.label1.TabIndex = 56;
@@ -244,6 +242,7 @@
             // graphPadding0KetHopCanBang
             // 
             this.graphPadding0KetHopCanBang.Location = new System.Drawing.Point(621, 35);
+            this.graphPadding0KetHopCanBang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.graphPadding0KetHopCanBang.Name = "graphPadding0KetHopCanBang";
             this.graphPadding0KetHopCanBang.ScrollGrace = 0D;
             this.graphPadding0KetHopCanBang.ScrollMaxX = 0D;
@@ -259,6 +258,7 @@
             // graphPadding0KetHop
             // 
             this.graphPadding0KetHop.Location = new System.Drawing.Point(294, 35);
+            this.graphPadding0KetHop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.graphPadding0KetHop.Name = "graphPadding0KetHop";
             this.graphPadding0KetHop.ScrollGrace = 0D;
             this.graphPadding0KetHop.ScrollMaxX = 0D;
@@ -274,9 +274,10 @@
             // ptbPadding01
             // 
             this.ptbPadding01.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ptbPadding01.Location = new System.Drawing.Point(56, 34);
+            this.ptbPadding01.Location = new System.Drawing.Point(42, 35);
+            this.ptbPadding01.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ptbPadding01.Name = "ptbPadding01";
-            this.ptbPadding01.Size = new System.Drawing.Size(173, 152);
+            this.ptbPadding01.Size = new System.Drawing.Size(186, 158);
             this.ptbPadding01.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ptbPadding01.TabIndex = 53;
             this.ptbPadding01.TabStop = false;
@@ -284,9 +285,10 @@
             // ptbPadding02
             // 
             this.ptbPadding02.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ptbPadding02.Location = new System.Drawing.Point(56, 204);
+            this.ptbPadding02.Location = new System.Drawing.Point(42, 204);
+            this.ptbPadding02.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ptbPadding02.Name = "ptbPadding02";
-            this.ptbPadding02.Size = new System.Drawing.Size(173, 152);
+            this.ptbPadding02.Size = new System.Drawing.Size(186, 158);
             this.ptbPadding02.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ptbPadding02.TabIndex = 73;
             this.ptbPadding02.TabStop = false;
@@ -294,9 +296,10 @@
             // ptbPadding03
             // 
             this.ptbPadding03.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ptbPadding03.Location = new System.Drawing.Point(56, 376);
+            this.ptbPadding03.Location = new System.Drawing.Point(42, 371);
+            this.ptbPadding03.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ptbPadding03.Name = "ptbPadding03";
-            this.ptbPadding03.Size = new System.Drawing.Size(173, 152);
+            this.ptbPadding03.Size = new System.Drawing.Size(186, 158);
             this.ptbPadding03.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ptbPadding03.TabIndex = 74;
             this.ptbPadding03.TabStop = false;
@@ -304,9 +307,10 @@
             // ptbPadding13
             // 
             this.ptbPadding13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ptbPadding13.Location = new System.Drawing.Point(48, 920);
+            this.ptbPadding13.Location = new System.Drawing.Point(35, 914);
+            this.ptbPadding13.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ptbPadding13.Name = "ptbPadding13";
-            this.ptbPadding13.Size = new System.Drawing.Size(173, 152);
+            this.ptbPadding13.Size = new System.Drawing.Size(186, 158);
             this.ptbPadding13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ptbPadding13.TabIndex = 77;
             this.ptbPadding13.TabStop = false;
@@ -314,9 +318,10 @@
             // ptbPadding12
             // 
             this.ptbPadding12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ptbPadding12.Location = new System.Drawing.Point(48, 748);
+            this.ptbPadding12.Location = new System.Drawing.Point(35, 743);
+            this.ptbPadding12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ptbPadding12.Name = "ptbPadding12";
-            this.ptbPadding12.Size = new System.Drawing.Size(173, 152);
+            this.ptbPadding12.Size = new System.Drawing.Size(186, 158);
             this.ptbPadding12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ptbPadding12.TabIndex = 76;
             this.ptbPadding12.TabStop = false;
@@ -324,12 +329,23 @@
             // ptbPadding11
             // 
             this.ptbPadding11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ptbPadding11.Location = new System.Drawing.Point(48, 578);
+            this.ptbPadding11.Location = new System.Drawing.Point(35, 578);
+            this.ptbPadding11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ptbPadding11.Name = "ptbPadding11";
-            this.ptbPadding11.Size = new System.Drawing.Size(173, 152);
+            this.ptbPadding11.Size = new System.Drawing.Size(186, 158);
             this.ptbPadding11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ptbPadding11.TabIndex = 75;
             this.ptbPadding11.TabStop = false;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(2, 562);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(64, 13);
+            this.label10.TabIndex = 78;
+            this.label10.Text = "Padding = 1";
             // 
             // FBai3_3
             // 
@@ -338,6 +354,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(976, 541);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.ptbPadding13);
             this.Controls.Add(this.ptbPadding12);
             this.Controls.Add(this.ptbPadding11);
@@ -349,7 +366,6 @@
             this.Controls.Add(this.graphPadding1TongHop);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.graphPadding1KetHopCanBang);
             this.Controls.Add(this.graphPadding1KetHop);
             this.Controls.Add(this.label4);
@@ -385,7 +401,6 @@
         private ZedGraph.ZedGraphControl graphPadding1TongHop;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
         private ZedGraph.ZedGraphControl graphPadding1KetHopCanBang;
         private ZedGraph.ZedGraphControl graphPadding1KetHop;
         private System.Windows.Forms.Label label4;
@@ -403,5 +418,6 @@
         private System.Windows.Forms.PictureBox ptbPadding13;
         private System.Windows.Forms.PictureBox ptbPadding12;
         private System.Windows.Forms.PictureBox ptbPadding11;
+        private System.Windows.Forms.Label label10;
     }
 }

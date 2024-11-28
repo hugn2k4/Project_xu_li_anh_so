@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -242,6 +243,162 @@ namespace Project
             }
             return hieuChinhHistogram;
         }
+        
+    }
+    internal class ThuatToanBai2
+    {
+        // Loc anh voi kernel va padding
+        public static Bitmap LocAnh(Bitmap anh, int kichThuocKernel, int padding)
+        {
+            int chieuDaiKernel = kichThuocKernel * kichThuocKernel;
+            int[,] kernel = new int[kichThuocKernel, kichThuocKernel];
+
+            // Khoi tao kernel mac dinh (kernel don gian)
+            for (int i = 0; i < kichThuocKernel; i++)
+            {
+                for (int j = 0; j < kichThuocKernel; j++)
+                {
+                    kernel[i, j] = 1;  // Dung kernel don gian co gia tri = 1
+                }
+            }
+
+            Bitmap anhKetQua = new Bitmap(anh.Width, anh.Height);
+
+            // Ap dung kernel voi padding
+            for (int x = padding; x < anh.Width - padding; x++)
+            {
+                for (int y = padding; y < anh.Height - padding; y++)
+                {
+                    int giaTriMoiPixel = 0;
+                    for (int i = 0; i < kichThuocKernel; i++)
+                    {
+                        for (int j = 0; j < kichThuocKernel; j++)
+                        {
+                            int pixelX = x + i - padding;
+                            int pixelY = y + j - padding;
+                            Color pixelColor = anh.GetPixel(pixelX, pixelY);
+                            int pixelGrayValue = pixelColor.R; // Vi anh da chuyen sang xam
+                            giaTriMoiPixel += pixelGrayValue * kernel[i, j];
+                        }
+                    }
+
+                    // Tinh gia tri pixel moi
+                    giaTriMoiPixel = Math.Min(Math.Max(giaTriMoiPixel / chieuDaiKernel, 0), 255);
+                    Color newColor = Color.FromArgb(giaTriMoiPixel, giaTriMoiPixel, giaTriMoiPixel);
+                    anhKetQua.SetPixel(x, y, newColor);
+                }
+            }
+
+            return anhKetQua;
+        }
+
+        // Loc voi stride
+        public static Bitmap LocVoiStride(Bitmap anh, int kichThuocKernel, int padding, int stride)
+        {
+            // Khởi tạo kernel đơn giản với tất cả giá trị = 1
+            int[,] kernel = new int[kichThuocKernel, kichThuocKernel];
+            for (int i = 0; i < kichThuocKernel; i++)
+            {
+                for (int j = 0; j < kichThuocKernel; j++)
+                {
+                    kernel[i, j] = 1;  // Kernel don gian co the thay doi theo yeu cau
+                }
+            }
+            // Thêm padding cho ảnh
+            int anhPaddingWidth = anh.Width + 2 * padding;
+            int anhPaddingHeight = anh.Height + 2 * padding;
+            Bitmap anhPadding = new Bitmap(anhPaddingWidth, anhPaddingHeight);
+            for (int x = 0; x < anh.Width; x++)
+            {
+                for (int y = 0; y < anh.Height; y++)
+                {
+                    Color pixelColor = anh.GetPixel(x, y);
+                    anhPadding.SetPixel(x + padding, y + padding, pixelColor);
+                }
+            }
+            // tính toán chiều dài chiều rộng ảnh mới
+            int anhKetQuaWidth = (int)Math.Floor((double)(anh.Width - kichThuocKernel + 2 * padding) / stride) + 1;
+            int anhKetQuaHeight = (int)Math.Floor((double)(anh.Height - kichThuocKernel + 2 * padding) / stride) + 1;
+
+            Bitmap anhKetQua = new Bitmap(anhKetQuaWidth, anhKetQuaHeight);
+
+            int halfKernel = kichThuocKernel / 2;
+
+            for (int x = 0; x < anhKetQuaWidth; x++)
+            {
+                for (int y = 0; y < anhKetQuaHeight; y++)
+                {
+                    // xGoc, yGoc là x,y đang xét tại ảnh đã thêm padding
+                    int xGoc = halfKernel + x * stride;
+                    int yGoc = halfKernel + y * stride;
+                    int giaTriMoiPixel = 0;
+
+                    // Duyệt qua từng pixel trong kernel
+                    for (int i = 0; i < kichThuocKernel; i++)
+                    {
+                        for (int j = 0; j < kichThuocKernel; j++)
+                        {
+                            int pixelX = xGoc + i - halfKernel;
+                            int pixelY = yGoc + j - halfKernel;
+                            // trường hợp áp padding không đủ khi hết ảnh
+                            if (pixelX >= 0 && pixelX < anhPadding.Width && pixelY >= 0 && pixelY < anhPadding.Height)
+                            {
+                                Color pixelColor = anhPadding.GetPixel(pixelX, pixelY);
+                                int pixelGrayValue = pixelColor.R;
+                                giaTriMoiPixel += pixelGrayValue * kernel[i, j];
+                            }
+                        }
+                    }
+                    // Đảm bảo giá trị nằm trong phạm vi [0, 255]
+                    giaTriMoiPixel = Math.Min(Math.Max(giaTriMoiPixel / (kichThuocKernel * kichThuocKernel), 0), 255);
+
+                    // Tạo màu mới từ giá trị đã tính toán
+                    Color newColor = Color.FromArgb(giaTriMoiPixel, giaTriMoiPixel, giaTriMoiPixel);
+
+                    // Set pixel mới vào ảnh kết quả
+                    anhKetQua.SetPixel(x, y, newColor);
+                }
+            }
+            return anhKetQua;
+        }
+
+        // Loc trung vi 3x3
+        public static Bitmap LocTrungVi(Bitmap anh, int kichThuocLanCan)
+        {
+            Bitmap anhKetQua = new Bitmap(anh.Width, anh.Height);
+            int halfSize = kichThuocLanCan / 2;
+
+            for (int x = halfSize; x < anh.Width - halfSize; x++)
+            {
+                for (int y = halfSize; y < anh.Height - halfSize; y++)
+                {
+                    // Không lấy giá trị trùng nhau
+                    HashSet<int> neighbors = new HashSet<int>();
+                    for (int i = -halfSize; i <= halfSize; i++)
+                    {
+                        for (int j = -halfSize; j <= halfSize; j++)
+                        {
+                            int pixelX = x + i;
+                            int pixelY = y + j;
+                            Color pixelColor = anh.GetPixel(pixelX, pixelY);
+                            int pixelGrayValue = pixelColor.R;
+                            neighbors.Add(pixelGrayValue);
+                        }
+                    }
+
+                    // Sap xep gia tri pixel va lay gia tri trung vi
+                    List<int> uniqueNeighbors = neighbors.ToList();
+                    uniqueNeighbors.Sort();
+                    int median = uniqueNeighbors[uniqueNeighbors.Count / 2];
+                    Color newColor = Color.FromArgb(median, median, median);
+                    anhKetQua.SetPixel(x, y, newColor);
+                }
+            }
+            return anhKetQua;
+        }
+    }
+    internal class ThuatToanBai3 
+    {
         // Bai 3-1
         public static Bitmap ChuyenDoiLBPVoiR1(Bitmap anhXam, int padding)
         {
@@ -278,6 +435,66 @@ namespace Project
             }
             return lbpImage;
         }
+
+        //Bai 3-2
+        public static void ChuyenDoiLBPVoiR2(Bitmap anhXam, int padding, Bitmap anh1, Bitmap anh2)
+        {
+            // xem lại phần này, xem xong xoá comment này, comment lại cho t nha
+            int width = anhXam.Width;
+            int height = anhXam.Height;
+
+            for (int y = 2 - padding; y < height - 2 + padding; y++)
+            {
+                for (int x = 2 - padding; x < width - 2 + padding; x++)
+                {
+                    int diemTrungTam = anhXam.GetPixel(x, y).R;
+                    int lbpValue1 = 0;
+                    int lbpValue2 = 0;
+
+                    // Các điểm lân cận cho mỗi hướng, bán kính R = 2
+                    int[] neighbors1 = new int[8]
+                    {
+                        GetGrayValue(anhXam, x + 2, y),
+                        GetGrayValue(anhXam, x + 2, y + 1),
+                        GetGrayValue(anhXam, x + 2, y + 2),
+                        GetGrayValue(anhXam, x + 1, y + 2),
+                        GetGrayValue(anhXam, x, y + 2),
+                        GetGrayValue(anhXam, x - 1, y + 2),
+                        GetGrayValue(anhXam, x - 2, y + 2),
+                        GetGrayValue(anhXam, x - 2, y + 1),
+                    };
+
+                    int[] neighbors2 = new int[8]
+                    {
+                        GetGrayValue(anhXam, x - 2, y),
+                        GetGrayValue(anhXam, x - 2, y - 1),
+                        GetGrayValue(anhXam, x - 2, y - 2),
+                        GetGrayValue(anhXam, x - 1, y - 2),
+                        GetGrayValue(anhXam, x, y - 2),
+                        GetGrayValue(anhXam, x + 1, y - 2),
+                        GetGrayValue(anhXam, x + 2, y - 2),
+                        GetGrayValue(anhXam, x + 2, y - 1),
+                    };
+                    // Tính toán giá trị LBP cho từng nhóm
+                    for (int i = 0; i < 8; i++)
+                    {
+                        if (neighbors1[i] >= diemTrungTam)
+                        {
+                            lbpValue1 += (1 << i);
+                        }
+                        if (neighbors2[i] >= diemTrungTam)
+                        {
+                            lbpValue2 += (1 << i);
+                        }
+                    }
+
+                    // Đặt giá trị LBP vào từng ảnh đầu ra
+                    anh1.SetPixel(x, y, Color.FromArgb(lbpValue1, lbpValue1, lbpValue1));
+                    anh2.SetPixel(x, y, Color.FromArgb(lbpValue2, lbpValue2, lbpValue2));
+                }
+            }
+        }
+
         // Bai 3-3
         public static void ChuyenDoiLBPVoiR3(Bitmap anhXam, int padding, Bitmap anh1, Bitmap anh2, Bitmap anh3)
         {

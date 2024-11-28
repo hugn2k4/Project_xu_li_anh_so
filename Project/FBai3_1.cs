@@ -26,7 +26,7 @@ namespace Project
             {
                 Bitmap hinhXam = new Bitmap(ptbAnhXam.Image);
 
-                Bitmap lbpAnhPadding0 = ThuatToan.ChuyenDoiLBPVoiR1(hinhXam, padding: 0);
+                Bitmap lbpAnhPadding0 = ThuatToanBai3.ChuyenDoiLBPVoiR1(hinhXam, padding: 0);
                 ptbPadding0.Image = lbpAnhPadding0;
 
                 double[] histogramPadding0 = ThuatToan.TinhHistogram(lbpAnhPadding0);
@@ -40,7 +40,7 @@ namespace Project
                 graphPadding0CanBang.GraphPane = ThuatToan.BienDoiHistogram(pointsH2, graphPadding0CanBang);
                 graphPadding0CanBang.Refresh();
 
-                Bitmap lbpAnhPadding1 = ThuatToan.ChuyenDoiLBPVoiR1(hinhXam, padding: 1);
+                Bitmap lbpAnhPadding1 = ThuatToanBai3.ChuyenDoiLBPVoiR1(hinhXam, padding: 1);
                 ptbPadding1.Image = lbpAnhPadding1;
 
                 double[] histogramPadding1 = ThuatToan.TinhHistogram(lbpAnhPadding1);

@@ -12,6 +12,9 @@ namespace Project
 {
     public partial class Project : Form
     {
+        FBai1 fBai1;
+        FBai2 fBai2;
+        FBai3 fBai3;
         public Project()
         {
             InitializeComponent();
@@ -27,17 +30,17 @@ namespace Project
         }
         private void btnBai1_Click(object sender, EventArgs e)
         {
-            showFormInPanel(new FBai1(ptbAnhXam));
+            showFormInPanel(fBai1);
         }
 
         private void btnBai2_Click(object sender, EventArgs e)
         {
-            showFormInPanel(new FBai2(ptbAnhXam));
+            showFormInPanel(fBai2);
         }
 
         private void btnBai3_Click(object sender, EventArgs e)
         {
-            showFormInPanel(new FBai3(ptbAnhXam));
+            showFormInPanel(fBai3);
         }
 
         private void btnChonAnh_Click(object sender, EventArgs e)
@@ -54,6 +57,10 @@ namespace Project
                         Image image = Image.FromFile(openFileDialog.FileName);
                         ptbAnh.Image = image;
                         BtnConvertToGray_Click(sender, e);
+                        fBai1 = new FBai1(ptbAnhXam);
+                        fBai2 = new FBai2(ptbAnhXam);
+                        fBai3 = new FBai3(ptbAnhXam);
+                        showFormInPanel(fBai1);
                     }
                     catch (Exception ex)
                     {

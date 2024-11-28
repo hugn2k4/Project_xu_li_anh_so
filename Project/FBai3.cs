@@ -21,7 +21,7 @@ namespace Project
             InitializeComponent();
             this.ptbAnhXam = ptbAnhXam;
             fBai3_1 = new FBai3_1(ptbAnhXam);
-            fBai3_2 = new FBai3_2();
+            fBai3_2 = new FBai3_2(ptbAnhXam);
             fBai3_3 = new FBai3_3(ptbAnhXam);
             showFormInPanel(fBai3_1);
         }
