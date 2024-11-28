@@ -70,9 +70,8 @@ namespace Project
             // Loc voi stride
             public static Bitmap LocVoiStride(Bitmap anh, int kichThuocKernel, int padding, int stride)
             {
+                // Khởi tạo kernel đơn giản với tất cả giá trị = 1
                 int[,] kernel = new int[kichThuocKernel, kichThuocKernel];
-
-                // Khoi tao kernel don gian voi tat ca gia tri = 1
                 for (int i = 0; i < kichThuocKernel; i++)
                 {
                     for (int j = 0; j < kichThuocKernel; j++)
@@ -80,35 +79,63 @@ namespace Project
                         kernel[i, j] = 1;  // Kernel don gian co the thay doi theo yeu cau
                     }
                 }
+                // Thêm padding cho ảnh
+                int anhPaddingWidth = anh.Width + 2 * padding;
+                int anhPaddingHeight = anh.Height + 2 * padding;
+                Bitmap anhPadding = new Bitmap(anhPaddingWidth, anhPaddingHeight);
+                for (int x = 0; x < anh.Width; x++)
+                {
+                    for (int y = 0; y < anh.Height; y++)
+                    {
+                        Color pixelColor = anh.GetPixel(x, y);
+                        anhPadding.SetPixel(x + padding, y + padding, pixelColor);
+                    }
+                }
+                // tính toán chiều dài chiều rộng ảnh mới
+                int anhKetQuaWidth = (int)Math.Floor((double)(anh.Width - kichThuocKernel + 2 * padding) / stride) + 1;
+                int anhKetQuaHeight = (int)Math.Floor((double)(anh.Height - kichThuocKernel + 2 * padding) / stride) + 1;
 
-                Bitmap anhKetQua = new Bitmap(anh.Width, anh.Height);
+                Bitmap anhKetQua = new Bitmap(anhKetQuaWidth, anhKetQuaHeight);
+
                 int halfKernel = kichThuocKernel / 2;
 
-                // Ap dung kernel voi stride
-                for (int x = halfKernel; x < anh.Width - halfKernel; x += stride)
+                for (int x = 0; x < anhKetQuaWidth; x++)
                 {
-                    for (int y = halfKernel; y < anh.Height - halfKernel; y += stride)
+                    for (int y = 0; y < anhKetQuaHeight; y++)
                     {
+                        // xGoc, yGoc là x,y đang xét tại ảnh đã thêm padding
+                        int xGoc = halfKernel + x * stride;
+                        int yGoc = halfKernel + y * stride;
                         int giaTriMoiPixel = 0;
+
+                        // Duyệt qua từng pixel trong kernel
                         for (int i = 0; i < kichThuocKernel; i++)
                         {
                             for (int j = 0; j < kichThuocKernel; j++)
                             {
-                                int pixelX = x + i - halfKernel;
-                                int pixelY = y + j - halfKernel;
-                                Color pixelColor = anh.GetPixel(pixelX, pixelY);
-                                int pixelGrayValue = pixelColor.R;
-                                giaTriMoiPixel += pixelGrayValue * kernel[i, j];
+                                int pixelX = xGoc + i - halfKernel;
+                                int pixelY = yGoc + j - halfKernel;
+                                // trường hợp áp padding không đủ khi hết ảnh
+                                if (pixelX >= 0 && pixelX < anhPadding.Width && pixelY >= 0 && pixelY < anhPadding.Height)
+                                {
+                                    Color pixelColor = anhPadding.GetPixel(pixelX, pixelY);
+                                    int pixelGrayValue = pixelColor.R;
+                                    giaTriMoiPixel += pixelGrayValue * kernel[i, j];
+                                }
                             }
                         }
+                        // Đảm bảo giá trị nằm trong phạm vi [0, 255]
                         giaTriMoiPixel = Math.Min(Math.Max(giaTriMoiPixel / (kichThuocKernel * kichThuocKernel), 0), 255);
+
+                        // Tạo màu mới từ giá trị đã tính toán
                         Color newColor = Color.FromArgb(giaTriMoiPixel, giaTriMoiPixel, giaTriMoiPixel);
+
+                        // Set pixel mới vào ảnh kết quả
                         anhKetQua.SetPixel(x, y, newColor);
                     }
                 }
                 return anhKetQua;
             }
-
 
             // Loc trung vi 3x3
             public static Bitmap LocTrungVi(Bitmap anh, int kichThuocLanCan)
@@ -120,8 +147,8 @@ namespace Project
                 {
                     for (int y = halfSize; y < anh.Height - halfSize; y++)
                     {
-                        List<int> neighbors = new List<int>();
-
+                        // Không lấy giá trị trùng nhau
+                        HashSet<int> neighbors = new HashSet<int>();
                         for (int i = -halfSize; i <= halfSize; i++)
                         {
                             for (int j = -halfSize; j <= halfSize; j++)
@@ -135,8 +162,9 @@ namespace Project
                         }
 
                         // Sap xep gia tri pixel va lay gia tri trung vi
-                        neighbors.Sort();
-                        int median = neighbors[neighbors.Count / 2];
+                        List<int> uniqueNeighbors = neighbors.ToList();
+                        uniqueNeighbors.Sort();
+                        int median = uniqueNeighbors[uniqueNeighbors.Count / 2];
                         Color newColor = Color.FromArgb(median, median, median);
                         anhKetQua.SetPixel(x, y, newColor);
                     }
@@ -164,7 +192,7 @@ namespace Project
                 ptbI3.Image = I3;
 
                 //Loc trung vi tren anh I3 voi lan can 3x3
-                Bitmap I4 = ImageProcessing.LocTrungVi(I3, 0);
+                Bitmap I4 = ImageProcessing.LocTrungVi(I3, 3);
                 ptbI4.Image = I4;
             }
 
