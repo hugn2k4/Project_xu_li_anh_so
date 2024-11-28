@@ -22,25 +22,6 @@ namespace Project
 
         public class ImageProcessing
         {
-            // Chuyen anh sang anh xam
-            public static Bitmap ChuyenDoiAnhXam(Bitmap anhGoc)
-            {
-                Bitmap anhXam = new Bitmap(anhGoc.Width, anhGoc.Height);
-
-                for (int x = 0; x < anhGoc.Width; x++)
-                {
-                    for (int y = 0; y < anhGoc.Height; y++)
-                    {
-                        Color pixelColor = anhGoc.GetPixel(x, y);
-                        int grayValue = (int)(0.299 * pixelColor.R + 0.587 * pixelColor.G + 0.114 * pixelColor.B);
-                        Color grayColor = Color.FromArgb(grayValue, grayValue, grayValue);
-                        anhXam.SetPixel(x, y, grayColor);
-                    }
-                }
-
-                return anhXam;
-            }
-
             // Loc anh voi kernel va padding
             public static Bitmap LocAnh(Bitmap anh, int kichThuocKernel, int padding)
             {
@@ -120,13 +101,11 @@ namespace Project
                                 giaTriMoiPixel += pixelGrayValue * kernel[i, j];
                             }
                         }
-
                         giaTriMoiPixel = Math.Min(Math.Max(giaTriMoiPixel / (kichThuocKernel * kichThuocKernel), 0), 255);
                         Color newColor = Color.FromArgb(giaTriMoiPixel, giaTriMoiPixel, giaTriMoiPixel);
                         anhKetQua.SetPixel(x, y, newColor);
                     }
                 }
-
                 return anhKetQua;
             }
 
@@ -162,7 +141,6 @@ namespace Project
                         anhKetQua.SetPixel(x, y, newColor);
                     }
                 }
-
                 return anhKetQua;
             }
         }
@@ -186,7 +164,7 @@ namespace Project
                 ptbI3.Image = I3;
 
                 //Loc trung vi tren anh I3 voi lan can 3x3
-                Bitmap I4 = ImageProcessing.LocTrungVi(I3, 3);
+                Bitmap I4 = ImageProcessing.LocTrungVi(I3, 0);
                 ptbI4.Image = I4;
             }
 

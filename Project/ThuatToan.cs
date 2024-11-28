@@ -281,8 +281,9 @@ namespace Project
         }
 
         //Bai 3-2
-        public static void ChuyenDoiLBPVoiR2(Bitmap anhXam, int padding, Bitmap anh1, Bitmap anh2, Bitmap anh3)
+        public static void ChuyenDoiLBPVoiR2(Bitmap anhXam, int padding, Bitmap anh1, Bitmap anh2)
         {
+            // xem lại phần này, xem xong xoá comment này, comment lại cho t nha
             int width = anhXam.Width;
             int height = anhXam.Height;
 
@@ -293,45 +294,31 @@ namespace Project
                     int diemTrungTam = anhXam.GetPixel(x, y).R;
                     int lbpValue1 = 0;
                     int lbpValue2 = 0;
-                    int lbpValue3 = 0;
 
                     // Các điểm lân cận cho mỗi hướng, bán kính R = 2
                     int[] neighbors1 = new int[8]
                     {
-                GetGrayValue(anhXam, x + 2, y),     // Phía phải
-                GetGrayValue(anhXam, x + 2, y + 1),
-                GetGrayValue(anhXam, x + 2, y + 2),
-                GetGrayValue(anhXam, x + 1, y + 2),
-                GetGrayValue(anhXam, x, y + 2),     // Phía dưới
-                GetGrayValue(anhXam, x - 1, y + 2),
-                GetGrayValue(anhXam, x - 2, y + 2),
-                GetGrayValue(anhXam, x - 2, y + 1),
+                        GetGrayValue(anhXam, x + 2, y), 
+                        GetGrayValue(anhXam, x + 2, y + 1),
+                        GetGrayValue(anhXam, x + 2, y + 2),
+                        GetGrayValue(anhXam, x + 1, y + 2),
+                        GetGrayValue(anhXam, x, y + 2),
+                        GetGrayValue(anhXam, x - 1, y + 2),
+                        GetGrayValue(anhXam, x - 2, y + 2),
+                        GetGrayValue(anhXam, x - 2, y + 1),
                     };
 
                     int[] neighbors2 = new int[8]
                     {
-                GetGrayValue(anhXam, x - 2, y),     // Phía trái
-                GetGrayValue(anhXam, x - 2, y - 1),
-                GetGrayValue(anhXam, x - 2, y - 2),
-                GetGrayValue(anhXam, x - 1, y - 2),
-                GetGrayValue(anhXam, x, y - 2),     // Phía trên
-                GetGrayValue(anhXam, x + 1, y - 2),
-                GetGrayValue(anhXam, x + 2, y - 2),
-                GetGrayValue(anhXam, x + 2, y - 1),
+                        GetGrayValue(anhXam, x - 2, y),
+                        GetGrayValue(anhXam, x - 2, y - 1),
+                        GetGrayValue(anhXam, x - 2, y - 2),
+                        GetGrayValue(anhXam, x - 1, y - 2),
+                        GetGrayValue(anhXam, x, y - 2), 
+                        GetGrayValue(anhXam, x + 1, y - 2),
+                        GetGrayValue(anhXam, x + 2, y - 2),
+                        GetGrayValue(anhXam, x + 2, y - 1),
                     };
-
-                    int[] neighbors3 = new int[8]
-                    {
-                GetGrayValue(anhXam, x + 1, y - 2),
-                GetGrayValue(anhXam, x + 2, y - 2),
-                GetGrayValue(anhXam, x + 2, y - 1),
-                GetGrayValue(anhXam, x + 2, y),
-                GetGrayValue(anhXam, x + 2, y + 1),
-                GetGrayValue(anhXam, x + 2, y + 2),
-                GetGrayValue(anhXam, x + 1, y + 2),
-                GetGrayValue(anhXam, x, y + 2),
-                    };
-
                     // Tính toán giá trị LBP cho từng nhóm
                     for (int i = 0; i < 8; i++)
                     {
@@ -343,16 +330,11 @@ namespace Project
                         {
                             lbpValue2 += (1 << i);
                         }
-                        if (neighbors3[i] >= diemTrungTam)
-                        {
-                            lbpValue3 += (1 << i);
-                        }
                     }
 
                     // Đặt giá trị LBP vào từng ảnh đầu ra
                     anh1.SetPixel(x, y, Color.FromArgb(lbpValue1, lbpValue1, lbpValue1));
                     anh2.SetPixel(x, y, Color.FromArgb(lbpValue2, lbpValue2, lbpValue2));
-                    anh3.SetPixel(x, y, Color.FromArgb(lbpValue3, lbpValue3, lbpValue3));
                 }
             }
         }
