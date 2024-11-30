@@ -38,7 +38,7 @@ namespace Project
                 graphH2.GraphPane = ThuatToan.BienDoiHistogram(pointsH2, graphH2);
                 graphH2.Refresh();
 
-                double[] histogramHieuChinh = ThuatToan.HieuChinhHistogram(histogram);
+                double[] histogramHieuChinh = ThuatToan.HieuChinhHistogram(histogramCanBang);
                 PointPairList pointsH3 = ThuatToan.ChuyenDoiHistogram(histogramHieuChinh);
                 graphH3.GraphPane = ThuatToan.BienDoiHistogram(pointsH3, graphH3);
                 graphH3.Refresh();
